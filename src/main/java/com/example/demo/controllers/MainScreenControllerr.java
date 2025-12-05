@@ -10,6 +10,10 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import java.util.List;
 
@@ -22,8 +26,8 @@ import java.util.List;
 
 @Controller
 public class MainScreenControllerr {
-   // private final PartRepository partRepository;
-   // private final ProductRepository productRepository;'
+
+
 
     private PartService partService;
     private ProductService productService;
@@ -40,6 +44,7 @@ public class MainScreenControllerr {
         this.partService=partService;
         this.productService=productService;
     }
+
     @GetMapping("/mainscreen")
     public String listPartsandProducts(Model theModel, @Param("partkeyword") String partkeyword, @Param("productkeyword") String productkeyword){
         //add to the sprig model
@@ -61,4 +66,40 @@ public class MainScreenControllerr {
     public String showAboutPage() {
         return "about";
     }
+    @PostMapping("/products/{id}/buy")
+    public String buyProduct(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
+
+        // Get the product
+        Product product = productService.getById(id);   // make sure ProductService has this method
+
+        if (product == null) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Purchase failed: product not found.");
+            return "redirect:/mainscreen";
+        }
+
+
+        int currentInv = product.getInv();
+
+        if (currentInv <= 0) {
+            // failure message
+            redirectAttributes.addFlashAttribute(
+                    "errorMessage",
+                    "Purchase failed: '" + product.getName() + "' is out of stock."
+            );
+        } else {
+
+            product.setInv(currentInv - 1);
+            productService.save(product);
+
+            // Success message
+            redirectAttributes.addFlashAttribute(
+                    "successMessage",
+                    "Successfully purchased '" + product.getName() + "'. Remaining inventory: " + product.getInv()
+            );
+        }
+
+        // Go back to the main screen so messages and updated inventory show
+        return "redirect:/mainscreen";
+    }
+
 }

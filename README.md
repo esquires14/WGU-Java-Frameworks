@@ -32,11 +32,11 @@ Date: 12/05/2025
     Line Number: 32-157
     Change Made: Added my 5 parts and 5 products to the inventory, multi-pack part added as well for duplicates.
 
-### Part F:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+### Part F: 
+    Prompt: F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters: •  The “Buy Now” button must be next to the buttons that update and delete products. • The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts. •  Display a message that indicates the success or failure of a purchase.
+    File Name: mainscreen.html, MainScreenControllerr.java, Product.java, ProductService.java, ProductServiceImpl.java
+    Line Number: MainScreenController.java(lines 69-99), mainscreen.html(lines 299-334), Product.java(lines 109-113), ProductService.java(line 23), ProductServiceImpl.java(lines 66-69).
+    Change Made: Added a Buy now button that shows when purchased and shows the inventory go down. 
 
 ### Part G:
     Prompt:
