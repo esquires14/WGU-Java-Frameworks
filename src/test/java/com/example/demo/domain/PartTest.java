@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -156,4 +159,59 @@ class PartTest {
         partOut.setId(1l);
         assertEquals(partIn.hashCode(),partOut.hashCode());
     }
+    @Test
+    void minAndMaxInventorySetCorrectly() {
+        int min = 2;
+        int max = 10;
+
+        partIn.setMinInv(min);
+        partIn.setMaxInv(max);
+
+        partOut.setMinInv(min);
+        partOut.setMaxInv(max);
+
+        assertEquals(min, partIn.getMinInv());
+        assertEquals(max, partIn.getMaxInv());
+
+        assertEquals(min, partOut.getMinInv());
+        assertEquals(max, partOut.getMaxInv());
+    }
+
+    @Test
+    void inventoryWithinMinAndMaxIsValid() {
+        // inhouse part
+        partIn.setMinInv(1);
+        partIn.setMaxInv(10);
+        partIn.setInv(5);
+
+        // outsourced part
+        partOut.setMinInv(1);
+        partOut.setMaxInv(10);
+        partOut.setInv(5);
+
+        boolean inRangeInhouse =
+                partIn.getInv() >= partIn.getMinInv() &&
+                        partIn.getInv() <= partIn.getMaxInv();
+
+        boolean inRangeOutsourced =
+                partOut.getInv() >= partOut.getMinInv() &&
+                        partOut.getInv() <= partOut.getMaxInv();
+
+        assertTrue(inRangeInhouse, "Inhouse part inventory should be within range");
+        assertTrue(inRangeOutsourced, "Outsourced part inventory should be within range");
+    }
+
+    @Test
+    void inventoryBelowMinimumIsInvalid() {
+        partIn.setMinInv(3);
+        partIn.setMaxInv(10);
+        partIn.setInv(2); // below min
+
+        boolean inRange =
+                partIn.getInv() >= partIn.getMinInv() &&
+                        partIn.getInv() <= partIn.getMaxInv();
+
+        assertFalse(inRange, "Inventory below minimum should be considered invalid");
+    }
+
 }

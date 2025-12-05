@@ -45,16 +45,16 @@ Date: 12/05/2025
     Change Made: Modified parts to track the min and max inventory. 
 
 ### Part H:
-    Prompt:
-    File Name:
-    Line Number:
+    Prompt: H.  Add validation for between or at the maximum and minimum fields. The validation must include the following: •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts. •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum. •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+    File Name: mainscreen.html
+    Line Number: 199-204
     Change Made: 
 
 ### Part I:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt: I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+    File Name: PartTest.java
+    Line Number: 162-214
+    Change Made: Added 2 unit tests for max and min fields.
 
 ### Part J:
     Prompt:
