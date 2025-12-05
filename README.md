@@ -39,10 +39,10 @@ Date: 12/05/2025
     Change Made: Added a Buy now button that shows when purchased and shows the inventory go down. 
 
 ### Part G:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt: G.  Modify the parts to track maximum and minimum inventory by doing the following: •  Add additional fields to the part entity for maximum and minimum inventory. •  Modify the sample inventory to include the maximum and minimum fields. •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values. •  Rename the file the persistent storage is saved to. •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+    File Name: Part.java, AddInhousePartController.java, AddOutsourcedPartController.java, InhousePartForm.java, OutsourcedPartForm.java, application.properties
+    Line Number: Part.java(lines 24, 40), AddInhousePartController.java(lines 38-53), AddOutsourcedPartController.java(lines 37-52), InhousePartForm(lines 46-69), OutsourcedPartForm(lines 54-78), application.properties(lines 13).
+    Change Made: Modified parts to track the min and max inventory. 
 
 ### Part H:
     Prompt:
