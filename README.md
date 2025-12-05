@@ -15,16 +15,16 @@ Date: 12/05/2025
 ## Parts C-J:
 
 ### Part C:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt: Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
+    File Name: mainscreen.html
+    Line Number: 1-312
+    Change Made: Customized the HTML UI to my PC shop and added a bit of css and styling.
 
 ### Part D:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt:  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+    File Name: about.html, MainScreenControllerr.java
+    Line Number: 1-26(about.html) & 55-63(MainScreenControllerr.java)
+    Change Made: Made an about.html for the Custom PC Shop and added to the MainScreenControllerr.java to have a nav to and from mainscreen.html and about.html.
 
 ### Part E:
     Prompt:

@@ -52,4 +52,13 @@ public class MainScreenControllerr {
         theModel.addAttribute("productkeyword",productkeyword);
         return "mainscreen";
     }
+    @GetMapping("/")
+    public String redirectToMainScreen() {
+        return "redirect:/mainscreen";
+    }
+
+    @GetMapping("/about")
+    public String showAboutPage() {
+        return "about";
+    }
 }
