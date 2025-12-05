@@ -57,7 +57,7 @@ Date: 12/05/2025
     Change Made: Added 2 unit tests for max and min fields.
 
 ### Part J:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt: J.  Remove the class files for any unused validators in order to clean your code.
+    File Name: mainscreen.html
+    Line Number: 0
+    Change Made: Removed code that was messed up, did not remove any files as they are all inuse. 

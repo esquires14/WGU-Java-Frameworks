@@ -196,12 +196,6 @@
 </head>
 <body>
 
-<div th:if="${#fields.hasGlobalErrors()}">
-    <p class="text-danger"
-       th:each="err : ${#fields.globalErrors()}"
-       th:text="${err}"></p>
-</div>
-
 <div th:if="${successMessage}" class="alert alert-success"
      th:text="${successMessage}"></div>
 
