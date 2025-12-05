@@ -27,10 +27,10 @@ Date: 12/05/2025
     Change Made: Made an about.html for the Custom PC Shop and added to the MainScreenControllerr.java to have a nav to and from mainscreen.html and about.html.
 
 ### Part E:
-    Prompt:
-    File Name:
-    Line Number:
-    Change Made: 
+    Prompt: Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+    File Name: BootStrapData.java
+    Line Number: 32-157
+    Change Made: Added my 5 parts and 5 products to the inventory, multi-pack part added as well for duplicates.
 
 ### Part F:
     Prompt:
