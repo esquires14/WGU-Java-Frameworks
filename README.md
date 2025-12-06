@@ -58,6 +58,6 @@ Date: 12/05/2025
 
 ### Part J:
     Prompt: J.  Remove the class files for any unused validators in order to clean your code.
-    File Name: mainscreen.html
+    File Name: DeletePartValidator.java
     Line Number: 0
-    Change Made: Removed code that was messed up, did not remove any files as they are all inuse. 
+    Change Made: Removed file DeletePartValidator.java
