@@ -91,45 +91,6 @@ Run unit tests:
 bashmvn test
 ```
 
-Key test coverage includes:
-- Part validation (min/max inventory)
-- Product purchase functionality
-- Inventory constraint enforcement
-
-## 🎯 Key Implementation Details
-
-### Inventory Validation
-- **Minimum Inventory Check** - Prevents parts/products from dropping below minimum stock
-- **Maximum Inventory Check** - Prevents parts from exceeding maximum capacity
-- **Purchase Validation** - Ensures sufficient inventory before completing transactions
-
-### Data Persistence
-- Uses H2 in-memory database for development
-- Custom database file: `spring-boot-h2-db-pcshop`
-- Data initialized via `BootStrapData.java`
-
-### Entity Relationships
-- **Part** ↔ **Product** (Many-to-Many)
-- Support for both InHouse and Outsourced parts
-- Product inventory independent of part inventory
-
-## 📸 Screenshots
-
-*(Add screenshots of your application here)*
-- Main inventory screen
-- Add/Edit part forms
-- Purchase confirmation
-- Validation error messages
-
-## 🎯 Key Learning Outcomes
-
-- Implemented Spring Boot MVC architecture
-- Built RESTful CRUD operations with Spring Data JPA
-- Created custom validation logic for business rules
-- Developed Thymeleaf templates with dynamic content
-- Wrote unit tests for critical business logic
-- Managed entity relationships and database persistence
-
 ## 📁 Project Structure
 ```
 src/
