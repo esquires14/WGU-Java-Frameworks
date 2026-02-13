@@ -1,63 +1,156 @@
-<strong>** DO NOT DISTRIBUTE OR PUBLICLY POST SOLUTIONS TO THESE LABS. MAKE ALL FORKS OF THIS REPOSITORY WITH SOLUTION CODE PRIVATE. PLEASE REFER TO THE STUDENT CODE OF CONDUCT AND ETHICAL EXPECTATIONS FOR COLLEGE OF INFORMATION TECHNOLOGY STUDENTS FOR SPECIFICS. ** </strong>
+Bits & Bytes Custom PC Shop - Spring Boot E-Commerce Application
+A full-stack e-commerce web application for a custom PC parts and systems shop, built with Spring Boot and Thymeleaf. Features comprehensive inventory management, validation, and purchasing capabilities.
+🎓 Academic Context
+Completed as part of D287 - Java Frameworks coursework at Western Governors University (December 2025)
+🚀 Features
+Core Functionality
 
-# WESTERN GOVERNORS UNIVERSITY
-## D287 – JAVA FRAMEWORKS
-Welcome to Java Frameworks! This is an opportunity for students to implement user interfaces and learn to leverage existing frameworks, assets, and content for object-oriented programming.
-FOR SPECIFIC TASK INSTRUCTIONS AND REQUIREMENTS FOR THIS ASSESSMENT, PLEASE REFER TO THE COURSE PAGE.
-## Bits & Bytes Custom PC Shop Project
+Product & Parts Management - Full CRUD operations for PC components and complete systems
+Inventory Tracking - Real-time inventory with minimum/maximum stock level enforcement
+Purchase System - "Buy Now" functionality with automatic inventory decrementing
+Validation System - Comprehensive validation to prevent overselling and maintain stock levels
+Responsive UI - Custom-styled Thymeleaf templates with Bootstrap
 
-Name: Emily Squires
+Inventory Management
 
-Student ID: 011962689
+Add, update, and delete parts (in-house and outsourced)
+Add, update, and delete complete PC systems
+Set and enforce minimum/maximum inventory thresholds
+Automatic validation prevents inventory from falling below minimum or exceeding maximum
 
-Date: 12/05/2025
+Business Logic
 
-## Parts C-J:
+Parts can be associated with multiple products
+Purchasing a product decrements product inventory only (parts remain unchanged)
+Success/failure messages for all transactions
+Error handling for invalid inventory operations
 
-### Part C:
-    Prompt: Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.
-    File Name: mainscreen.html
-    Line Number: 1-312
-    Change Made: Customized the HTML UI to my PC shop and added a bit of css and styling.
+🛠️ Technologies Used
+Backend:
 
-### Part D:
-    Prompt:  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-    File Name: about.html, MainScreenControllerr.java
-    Line Number: 1-26(about.html) & 55-63(MainScreenControllerr.java)
-    Change Made: Made an about.html for the Custom PC Shop and added to the MainScreenControllerr.java to have a nav to and from mainscreen.html and about.html.
+Java 11+
+Spring Boot 2.x
+Spring Data JPA
+Hibernate
+H2 Database (development)
+Maven
 
-### Part E:
-    Prompt: Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-    File Name: BootStrapData.java
-    Line Number: 32-157
-    Change Made: Added my 5 parts and 5 products to the inventory, multi-pack part added as well for duplicates.
+Frontend:
 
-### Part F: 
-    Prompt: F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters: •  The “Buy Now” button must be next to the buttons that update and delete products. • The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts. •  Display a message that indicates the success or failure of a purchase.
-    File Name: mainscreen.html, MainScreenControllerr.java, Product.java, ProductService.java, ProductServiceImpl.java
-    Line Number: MainScreenController.java(lines 69-99), mainscreen.html(lines 299-334), Product.java(lines 109-113), ProductService.java(line 23), ProductServiceImpl.java(lines 66-69).
-    Change Made: Added a Buy now button that shows when purchased and shows the inventory go down. 
+Thymeleaf
+HTML5/CSS3
+Bootstrap 4
 
-### Part G:
-    Prompt: G.  Modify the parts to track maximum and minimum inventory by doing the following: •  Add additional fields to the part entity for maximum and minimum inventory. •  Modify the sample inventory to include the maximum and minimum fields. •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values. •  Rename the file the persistent storage is saved to. •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
-    File Name: Part.java, AddInhousePartController.java, AddOutsourcedPartController.java, InhousePartForm.java, OutsourcedPartForm.java, application.properties
-    Line Number: Part.java(lines 24, 40), AddInhousePartController.java(lines 38-53), AddOutsourcedPartController.java(lines 37-52), InhousePartForm(lines 46-69), OutsourcedPartForm(lines 54-78), application.properties(lines 13).
-    Change Made: Modified parts to track the min and max inventory. 
+Testing:
 
-### Part H:
-    Prompt: H.  Add validation for between or at the maximum and minimum fields. The validation must include the following: •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts. •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum. •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
-    File Name: mainscreen.html
-    Line Number: 199-204
-    Change Made: 
+JUnit
+Spring Boot Test
 
-### Part I:
-    Prompt: I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
-    File Name: PartTest.java
-    Line Number: 162-214
-    Change Made: Added 2 unit tests for max and min fields.
+📋 Prerequisites
 
-### Part J:
-    Prompt: J.  Remove the class files for any unused validators in order to clean your code.
-    File Name: DeletePartValidator.java
-    Line Number: 0
-    Change Made: Removed file DeletePartValidator.java
+JDK 11 or higher
+Maven 3.6+
+IDE (IntelliJ IDEA recommended)
+
+⚙️ Installation & Setup
+
+Clone the repository
+
+bashgit clone https://github.com/esquires14/WGU-Java-Frameworks-PC-Shop.git
+cd WGU-Java-Frameworks-PC-Shop
+
+Build the project
+
+bashmvn clean install
+
+Run the application
+
+bashmvn spring-boot:run
+
+Access the application
+
+
+Main page: http://localhost:8080
+About page: http://localhost:8080/about
+H2 Console: http://localhost:8080/h2-console (if enabled)
+
+📦 Sample Inventory
+The application comes pre-loaded with sample data:
+Parts (5):
+
+CPU, GPU, RAM, Storage, Power Supply
+Each with configurable min/max inventory levels
+
+Products (5):
+
+Complete PC systems (Gaming, Workstation, Budget, etc.)
+Associated parts for each build
+
+🧪 Testing
+Run unit tests:
+bashmvn test
+```
+
+Key test coverage includes:
+- Part validation (min/max inventory)
+- Product purchase functionality
+- Inventory constraint enforcement
+
+## 🎯 Key Implementation Details
+
+### Inventory Validation
+- **Minimum Inventory Check** - Prevents parts/products from dropping below minimum stock
+- **Maximum Inventory Check** - Prevents parts from exceeding maximum capacity
+- **Purchase Validation** - Ensures sufficient inventory before completing transactions
+
+### Data Persistence
+- Uses H2 in-memory database for development
+- Custom database file: `spring-boot-h2-db-pcshop`
+- Data initialized via `BootStrapData.java`
+
+### Entity Relationships
+- **Part** ↔ **Product** (Many-to-Many)
+- Support for both InHouse and Outsourced parts
+- Product inventory independent of part inventory
+
+## 📸 Screenshots
+
+*(Add screenshots of your application here)*
+- Main inventory screen
+- Add/Edit part forms
+- Purchase confirmation
+- Validation error messages
+
+## 🎯 Key Learning Outcomes
+
+- Implemented Spring Boot MVC architecture
+- Built RESTful CRUD operations with Spring Data JPA
+- Created custom validation logic for business rules
+- Developed Thymeleaf templates with dynamic content
+- Wrote unit tests for critical business logic
+- Managed entity relationships and database persistence
+
+## 📁 Project Structure
+```
+src/
+├── main/
+│   ├── java/
+│   │   └── com/example/demo/
+│   │       ├── bootstrap/       # Data initialization
+│   │       ├── controllers/     # Spring MVC controllers
+│   │       ├── domain/          # Entity classes
+│   │       ├── repositories/    # JPA repositories
+│   │       ├── services/        # Business logic
+│   │       └── validators/      # Custom validators
+│   └── resources/
+│       ├── templates/           # Thymeleaf views
+│       └── application.properties
+└── test/
+└── java/                    # Unit tests
+📝 License
+This project was completed as academic coursework. Please refer to your institution's academic integrity policy before using this code.
+👤 Author
+Emily Squires
+
+GitHub: @esquires14
+LinkedIn: emily-squires-swe
